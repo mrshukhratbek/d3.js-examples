@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import * as d3 from 'd3';
+import { useEffect, useRef } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const myDiv = useRef();
+  let size = 500;
+  let dataset = [100, 200, 300, 400, 500];
+  let rectWidth = 95;
+
+  useEffect(() => {
+    let svg = d3
+      .select(myDiv.current)
+      .append(`svg`)
+      .attr('width', size)
+      .attr('height', size);
+
+    svg
+      .selectAll('rect')
+      .data(dataset)
+      .enter()
+      .append('rect')
+      .attr('x', (d, i) => 5 + i * (rectWidth + 5))
+      .attr('y', (d) => size - d)
+      .attr('width', rectWidth)
+      .attr('height', (d) => d)
+      .attr('fill', 'teal');
+  }, [size, rectWidth, dataset]);
+
+  return <div ref={myDiv}></div>;
 }
 
 export default App;
