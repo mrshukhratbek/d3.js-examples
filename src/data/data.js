@@ -21,6 +21,14 @@ export const data = {
             },
             {
               name: 'Programmer #3',
+              children: [
+                {
+                  name: 'Intern #1',
+                },
+                {
+                  name: 'Intern #2',
+                },
+              ],
             },
           ],
         },

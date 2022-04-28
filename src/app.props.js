@@ -2,7 +2,7 @@ import { useCenteredTree } from './utils';
 
 export const useAppProps = () => {
   const [translate, containerRef] = useCenteredTree();
-  const nodeSize = { x: 200, y: 200 };
+  const nodeSize = { x: 250, y: 250 };
 
   const renderForeignObjectNode = ({
     nodeDatum,
@@ -13,11 +13,19 @@ export const useAppProps = () => {
       <circle r={15}></circle>
       {/* `foreignObject` requires width & height to be explicitly set. */}
       <foreignObject {...foreignObjectProps}>
-        <div style={{ border: '1px solid black', backgroundColor: '#dedede' }}>
+        <div
+          style={{
+            width: '200px',
+            border: '1px solid black',
+            backgroundColor: '#dedede',
+            borderRadius: '10px',
+            overflow: 'hidden',
+          }}
+        >
           <h3 style={{ textAlign: 'center' }}>{nodeDatum.name}</h3>
           {nodeDatum.children && (
             <button style={{ width: '100%' }} onClick={toggleNode}>
-              {nodeDatum.__rd3t.collapsed ? 'Expand' : 'Collapse'}
+              {nodeDatum.__rd3t.collapsed ? 'Open' : 'Close'}
             </button>
           )}
         </div>
