@@ -6,30 +6,39 @@ function App() {
     name: 'CEO',
     children: [
       {
-        name: 'Manager',
+        name: 'Project Manager',
         attributes: {
           department: 'Production',
         },
         children: [
           {
-            name: 'Foreman',
+            name: 'Frontent Lead',
             attributes: {
-              department: 'Fabrication',
+              department: 'Programming',
             },
             children: [
               {
-                name: 'Worker',
+                name: 'Programmer #1',
+              },
+              {
+                name: 'Programmer #2',
+              },
+              {
+                name: 'Programmer #3',
               },
             ],
           },
           {
-            name: 'Foreman',
+            name: 'Backend Lead',
             attributes: {
-              department: 'Assembly',
+              department: 'Programming',
             },
             children: [
               {
-                name: 'Worker',
+                name: 'Programmer #1',
+              },
+              {
+                name: 'Programmer #2',
               },
             ],
           },
