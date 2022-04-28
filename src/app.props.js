@@ -1,3 +1,4 @@
+import React from 'react';
 import { useCenteredTree } from './utils';
 
 export const useAppProps = () => {

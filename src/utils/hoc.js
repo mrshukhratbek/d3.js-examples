@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const hoc = (hook, Component, displayName = 'HocWrapper') => {
   Component.displayName = displayName;
 
