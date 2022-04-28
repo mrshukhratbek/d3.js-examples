@@ -11,7 +11,6 @@ export const useAppProps = () => {
   }) => (
     <g>
       <circle r={15}></circle>
-      {/* `foreignObject` requires width & height to be explicitly set. */}
       <foreignObject {...foreignObjectProps}>
         <div
           style={{
