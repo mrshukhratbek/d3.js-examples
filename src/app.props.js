@@ -1,14 +1,13 @@
-import './App.css';
+import React from 'react';
 import * as d3 from 'd3';
-import { useEffect, useRef } from 'react';
 
-function App() {
-  const myDiv = useRef();
+export const useAppProps = () => {
+  const myDiv = React.useRef();
   let size = 500;
-  let dataset = [100, 200, 300, 400, 500];
+  let dataset = React.useMemo(() => [100, 200, 300, 400, 500], []);
   let rectWidth = 95;
 
-  useEffect(() => {
+  React.useEffect(() => {
     let svg = d3
       .select(myDiv.current)
       .append(`svg`)
@@ -27,7 +26,7 @@ function App() {
       .attr('fill', 'teal');
   }, [size, rectWidth, dataset]);
 
-  return <div ref={myDiv}></div>;
-}
-
-export default App;
+  return {
+    myDiv,
+  };
+};
