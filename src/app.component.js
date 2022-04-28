@@ -1,3 +1,4 @@
+import React from 'react';
 import './app.css';
 import { hoc } from './utils';
 import { useAppProps } from './app.props';
