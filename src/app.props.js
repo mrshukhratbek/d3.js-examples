@@ -3,7 +3,7 @@ import { useCenteredTree } from './utils';
 
 export const useAppProps = () => {
   const [translate, containerRef] = useCenteredTree();
-  const nodeSize = { x: 250, y: 250 };
+  const nodeSize = { x: 300, y: 150 };
 
   const renderForeignObjectNode = ({
     nodeDatum,
