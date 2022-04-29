@@ -17,7 +17,6 @@ export const App = hoc(useAppProps, ({ containerRef, translate, nodeSize }) => {
         allowForeignObjects
         pathFunc="elbow"
         orientation="vertical"
-        nodeSvgShape={{ shape: 'none' }}
         nodeSize={nodeSize}
         nodeLabelComponent={{
           render: <Card />,
@@ -25,10 +24,10 @@ export const App = hoc(useAppProps, ({ containerRef, translate, nodeSize }) => {
             style: {
               background: 'lightblue',
               border: '1px solid black',
-              width: '80px',
-              height: '150px',
-              x: 80 / -2,
-              y: 150 / -2,
+              width: '150px',
+              height: '80px',
+              x: 150 / -2,
+              y: 80 / -2,
             },
           },
         }}
