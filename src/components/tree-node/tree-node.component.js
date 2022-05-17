@@ -9,7 +9,7 @@ import { useTreeNode } from "./tree-node.props";
 
 export const TreeNode = hoc(
   useTreeNode,
-  ({ nodeDatum, toggleNode, foreignObjectProps }) => {
+  ({ nodeDatum, toggleNode, foreignObjectProps, handleAdd }) => {
     return (
       <>
         <g>
@@ -31,7 +31,7 @@ export const TreeNode = hoc(
                   </button>
                 )}
                 <button>Edit</button>
-                <button>Add</button>
+                <button onClick={handleAdd}>Add</button>
               </div>
             </div>
           </foreignObject>
