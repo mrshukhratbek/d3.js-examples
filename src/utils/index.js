@@ -1,4 +1,3 @@
-import { hoc } from './hoc';
-import { useCenteredTree } from './centred-tree';
+import { hoc } from "./hoc";
 
-export { hoc, useCenteredTree };
+export { hoc };
