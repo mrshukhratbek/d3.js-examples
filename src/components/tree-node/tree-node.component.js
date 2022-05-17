@@ -9,7 +9,7 @@ import { useTreeNode } from "./tree-node.props";
 
 export const TreeNode = hoc(
   useTreeNode,
-  ({ nodeDatum, toggleNode, foreignObjectProps, handleAdd }) => {
+  ({ nodeDatum, toggleNode, foreignObjectProps, handleAdd, handleEdit }) => {
     return (
       <>
         <g>
@@ -30,7 +30,7 @@ export const TreeNode = hoc(
                     {nodeDatum.__rd3t.collapsed ? "Open" : "Close"}
                   </button>
                 )}
-                <button>Edit</button>
+                <button onClick={handleEdit}>Edit</button>
                 <button onClick={handleAdd}>Add</button>
               </div>
             </div>

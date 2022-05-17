@@ -16,5 +16,9 @@ export const useTreeNode = () => {
     navigate("..?add-modal=true", { replace: true });
   };
 
-  return { foreignObjectProps, handleAdd };
+  const handleEdit = () => {
+    navigate("..?edit-modal=true", { replace: true });
+  };
+
+  return { foreignObjectProps, handleAdd, handleEdit };
 };
