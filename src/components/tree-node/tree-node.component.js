@@ -31,7 +31,7 @@ export const TreeNode = hoc(
                   </button>
                 )}
                 <button onClick={handleEdit}>Edit</button>
-                <button onClick={handleAdd}>Add</button>
+                <button onClick={handleAdd.bind(null, nodeDatum)}>Add</button>
               </div>
             </div>
           </foreignObject>

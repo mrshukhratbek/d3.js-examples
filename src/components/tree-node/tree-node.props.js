@@ -12,7 +12,8 @@ export const useTreeNode = () => {
     y: -50,
   };
 
-  const handleAdd = () => {
+  const handleAdd = (data) => {
+    console.log(data);
     navigate("..?add-modal=true", { replace: true });
   };
 

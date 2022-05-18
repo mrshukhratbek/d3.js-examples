@@ -1,15 +1,16 @@
 export const data = {
+  id: 1,
   name: "CEO",
   children: [
     {
-      id: 1,
+      id: 2,
       name: "Project Manager",
       attributes: {
         department: "Production",
       },
       children: [
         {
-          id: 2,
+          id: 12,
           name: "Frontent Lead",
           attributes: {
             department: "Programming",
