@@ -1,23 +1,32 @@
 import { Modal } from '../modal';
+import { hoc } from '../../utils';
+import { useAddModalProps } from './add-modal.props';
 
-export const AddModal = ({ open, setOpen }) => {
-  return (
-    <Modal open={open} setOpen={setOpen}>
-      <form className="modal-form">
-        <select className="modal-select">
-          <option selected disabled>
-            Select parent node
-          </option>
-        </select>
-        <input
-          className="modal-input"
-          type="text"
-          placeholder="Node name"
-          required
-        />
+export const AddModal = hoc(
+  useAddModalProps,
+  ({ open, setOpen, inputRef, handleChange, handleSubmit }) => {
+    return (
+      <Modal open={open} setOpen={setOpen}>
+        <form
+          className="modal-form"
+          onSubmit={handleSubmit}
+          defaultValue="select"
+        >
+          <select className="modal-select" onChange={handleChange}>
+            <option value={'select'}>Select parent node</option>
+            <option>Salom</option>
+          </select>
 
-        <button className="modal-btn">Edit</button>
-      </form>
-    </Modal>
-  );
-};
+          <input
+            ref={inputRef}
+            className="modal-input"
+            type="text"
+            placeholder="Node name"
+            required
+          />
+          <button className="modal-btn">Edit</button>
+        </form>
+      </Modal>
+    );
+  }
+);
