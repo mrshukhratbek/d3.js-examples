@@ -5,6 +5,7 @@ export const data = {
     {
       type: "file",
       name: "CONTRIBUTING.md",
+      opened: true,
     },
     {
       type: "file",
