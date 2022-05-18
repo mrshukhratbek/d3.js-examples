@@ -25,7 +25,7 @@ export const TreeNode = hoc(
             >
               <h3 style={{ textAlign: "center" }}>{nodeDatum.name}</h3>
               <div className="button-wrapper">
-                {nodeDatum.children.length > 0 && (
+                {nodeDatum.children && nodeDatum.children.length > 0 && (
                   <button onClick={toggleNode}>
                     {nodeDatum.__rd3t.collapsed ? "Open" : "Close"}
                   </button>

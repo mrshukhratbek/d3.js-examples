@@ -75,6 +75,8 @@ export const useAppProps = () => {
 
     const result = findParentNode(innitialValue.data, innitialValue.parentNode);
     innitialValue.setData({ ...result });
+
+    navigate(pathname);
   };
   console.log(innitialValue.parentNode);
 
