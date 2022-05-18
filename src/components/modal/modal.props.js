@@ -19,8 +19,6 @@ export const useModalProps = ({ open }) => {
 
   React.useEffect(() => {
     elModal.current.addEventListener("click", handleCloseClick);
-
-    return () => elModal.current.removeEventListener("click", handleCloseClick);
   }, [search]);
 
   return {

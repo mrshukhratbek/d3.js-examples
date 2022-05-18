@@ -5,7 +5,7 @@ export const data = {
     {
       type: "file",
       name: "CONTRIBUTING.md",
-      opened: true,
+      open: true,
     },
     {
       type: "file",
@@ -34,6 +34,7 @@ export const data = {
             {
               type: "file",
               name: "EventPluginHub.js",
+              collapsible: true,
             },
             {
               type: "file",

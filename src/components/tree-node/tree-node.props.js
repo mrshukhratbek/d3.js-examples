@@ -17,6 +17,7 @@ export const useTreeNode = () => {
   };
 
   const handleAdd = (data) => {
+    console.log(data);
     setInnitialValue({
       ...innitialValue,
       parentNode: data,

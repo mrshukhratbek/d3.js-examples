@@ -80,7 +80,6 @@ export const useAppProps = () => {
 
     navigate(pathname);
   };
-  console.log(innitialValue.parentNode);
 
   return {
     inputRef,

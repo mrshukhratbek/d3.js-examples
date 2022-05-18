@@ -2,7 +2,13 @@ import React from "react";
 import "./app.css";
 import { hoc } from "./utils";
 import { useAppProps } from "./app.props";
-import { CustomTree, TreeContainer, TreeNode, Toolbar } from "./components";
+import {
+  CustomTree,
+  TreeContainer,
+  TreeNode,
+  Toolbar,
+  AddBtn,
+} from "./components";
 import { Modal } from "./components/modal/modal.component";
 
 export const App = hoc(
@@ -56,6 +62,7 @@ export const App = hoc(
           </Modal>
         </TreeContainer>
         <Toolbar />
+        <AddBtn />
       </>
     );
   }
