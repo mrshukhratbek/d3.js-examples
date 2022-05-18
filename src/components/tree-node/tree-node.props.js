@@ -25,7 +25,12 @@ export const useTreeNode = () => {
     navigate("..?add-modal=true", { replace: true });
   };
 
-  const handleEdit = () => {
+  const handleEdit = (data) => {
+    setInnitialValue({
+      ...innitialValue,
+      parentNode: data,
+    });
+
     navigate("..?edit-modal=true", { replace: true });
   };
 

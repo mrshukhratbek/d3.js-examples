@@ -13,7 +13,9 @@ export const App = hoc(
     editModal,
     setEditModal,
     handleAddNode,
+    handleEditNode,
     inputRef,
+    editInputRef,
     data,
   }) => {
     return (
@@ -37,7 +39,17 @@ export const App = hoc(
           </form>
         </Modal>
         <Modal open={editModal} setOpen={setEditModal} title="Edit">
-          <form>Edit</form>
+          <form className="modal-form" onSubmit={handleEditNode}>
+            <input
+              ref={editInputRef}
+              className="modal-input"
+              type="text"
+              placeholder="Node name"
+              required
+            />
+
+            <button className="modal-btn">Edit</button>
+          </form>
         </Modal>
       </TreeContainer>
     );

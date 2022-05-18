@@ -30,7 +30,7 @@ export const TreeNode = hoc(
                     {nodeDatum.__rd3t.collapsed ? "Open" : "Close"}
                   </button>
                 )}
-                <button onClick={handleEdit}>Edit</button>
+                <button onClick={handleEdit.bind(null, nodeDatum)}>Edit</button>
                 <button onClick={handleAdd.bind(null, nodeDatum)}>Add</button>
               </div>
             </div>
