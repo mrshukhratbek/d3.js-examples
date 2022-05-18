@@ -1,0 +1,29 @@
+.toolbar {
+  padding: 10px;
+  position: fixed;
+  width: 350px;
+  top: 0;
+  right: -350px;
+  background-color: #efefef;
+}
+
+.toolbar-open {
+  padding: 20px;
+  right: 0;
+}
+
+.toolabr-component {
+  padding-left: 20px;
+}
+
+.toolbar-btn {
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  right: 99%;
+}
+
+.toolbar-title {
+  margin: 0;
+  margin-bottom: 40px;
+}
