@@ -23,6 +23,7 @@ export const App = hoc(
         <CustomTree
           data={data}
           orientation="vertical"
+          collapsible={true}
           renderCustomNodeElement={(rd3tProps) => <TreeNode {...rd3tProps} />}
         />
         <Modal open={addModal} setOpen={setAddModal} title="Add">

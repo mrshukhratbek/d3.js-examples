@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 // @hook
 import { useValues } from "./hooks";
 // @utils
-import { findParentNode } from "./utils";
+import { findParentNode, addNode, editNode } from "./utils";
 
 export const useAppProps = () => {
   const { pathname, search } = useLocation();
@@ -51,10 +51,12 @@ export const useAppProps = () => {
 
     const addedNode = {
       ...innitialValue.parentNode,
-      children: [...innitialValue.parentNode.children, newNode],
+      children: innitialValue.parentNode.children
+        ? [...innitialValue.parentNode.children, newNode]
+        : [newNode],
     };
 
-    const result = findParentNode(innitialValue.data, addedNode);
+    const result = addNode(innitialValue.data, addedNode);
     innitialValue.setData({ ...result });
 
     inputRef.current.value = null;
@@ -73,7 +75,7 @@ export const useAppProps = () => {
 
     innitialValue.parentNode.name = editInputRef.current.value;
 
-    const result = findParentNode(innitialValue.data, innitialValue.parentNode);
+    const result = editNode(innitialValue.data, innitialValue.parentNode);
     innitialValue.setData({ ...result });
 
     navigate(pathname);
