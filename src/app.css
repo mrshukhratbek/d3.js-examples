@@ -72,3 +72,10 @@ body {
   margin-left: auto;
   width: 40px;
 }
+
+.modal-select {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 8px 5px;
+  outline: none;
+}

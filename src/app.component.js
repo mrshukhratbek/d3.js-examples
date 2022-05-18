@@ -1,19 +1,22 @@
-import React from "react";
-import "./app.css";
-import { hoc } from "./utils";
-import { useAppProps } from "./app.props";
+import React from 'react';
+import './app.css';
+import { hoc } from './utils';
+import { useAppProps } from './app.props';
 import {
   CustomTree,
   TreeContainer,
   TreeNode,
   Toolbar,
   AddBtn,
-} from "./components";
-import { Modal } from "./components/modal/modal.component";
+  AddModal,
+} from './components';
+import { Modal } from './components/modal/modal.component';
 
 export const App = hoc(
   useAppProps,
   ({
+    modal,
+    setModal,
     addModal,
     setAddModal,
     editModal,
@@ -62,7 +65,8 @@ export const App = hoc(
           </Modal>
         </TreeContainer>
         <Toolbar />
-        <AddBtn />
+        <AddBtn setModal={setModal} />
+        <AddModal open={modal} setOpen={setModal} title="Add" />
       </>
     );
   }

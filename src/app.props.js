@@ -1,10 +1,10 @@
 // @react
-import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 // @hook
-import { useValues } from "./hooks";
+import { useValues } from './hooks';
 // @utils
-import { findParentNode, addNode, editNode } from "./utils";
+import { findParentNode, addNode, editNode } from './utils';
 
 export const useAppProps = () => {
   const { pathname, search } = useLocation();
@@ -13,18 +13,19 @@ export const useAppProps = () => {
   // @states
   const [addModal, setAddModal] = React.useState(false);
   const [editModal, setEditModal] = React.useState(false);
+  const [modal, setModal] = React.useState(false);
   // @refs
   const inputRef = React.useRef(null);
   const editInputRef = React.useRef(null);
 
   React.useEffect(() => {
-    if (search === "?add-modal=true") {
+    if (search === '?add-modal=true') {
       return setAddModal(true);
     } else {
       setAddModal(false);
     }
 
-    if (search === "?edit-modal=true") {
+    if (search === '?edit-modal=true') {
       return setEditModal(true);
     } else {
       setEditModal(false);
@@ -84,8 +85,10 @@ export const useAppProps = () => {
   return {
     inputRef,
     editInputRef,
+    modal,
     addModal,
     editModal,
+    setModal,
     setAddModal,
     setEditModal,
     handleAddNode,
