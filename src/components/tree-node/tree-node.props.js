@@ -1,7 +1,11 @@
+// @react
 import { useNavigate } from "react-router-dom";
+// hook
+import { useValues } from "../../hooks";
 
 export const useTreeNode = () => {
   const navigate = useNavigate();
+  const [innitialValue, setInnitialValue] = useValues();
 
   const nodeSize = { x: 250, y: 250 };
 
@@ -13,7 +17,11 @@ export const useTreeNode = () => {
   };
 
   const handleAdd = (data) => {
-    console.log(data);
+    setInnitialValue({
+      ...innitialValue,
+      parentNode: data,
+    });
+
     navigate("..?add-modal=true", { replace: true });
   };
 

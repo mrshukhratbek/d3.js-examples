@@ -8,7 +8,7 @@ import { Modal } from "./components/modal/modal.component";
 
 export const App = hoc(
   useAppProps,
-  ({ addModal, setAddModal, editModal, setEditModal }) => {
+  ({ addModal, setAddModal, editModal, setEditModal, handleAddNode }) => {
     return (
       <TreeContainer>
         <CustomTree
@@ -17,7 +17,7 @@ export const App = hoc(
           renderCustomNodeElement={(rd3tProps) => <TreeNode {...rd3tProps} />}
         />
         <Modal open={addModal} setOpen={setAddModal} title="Add">
-          <form className="modal-form">
+          <form className="modal-form" onSubmit={handleAddNode}>
             <input
               className="modal-input"
               type="text"

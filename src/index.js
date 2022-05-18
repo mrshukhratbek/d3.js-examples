@@ -5,14 +5,16 @@ import ReactDOM from "react-dom/client";
 import { App } from "./app.component";
 // @provider
 import { BrowserRouter as Router } from "react-router-dom";
-import { CentredProvider } from "./contexts";
+import { CentredProvider, ValuesProvider } from "./contexts";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <CentredProvider>
-    <Router>
-      <App />
-    </Router>
-  </CentredProvider>
+  <Router>
+    <ValuesProvider>
+      <CentredProvider>
+        <App />
+      </CentredProvider>
+    </ValuesProvider>
+  </Router>
 );
