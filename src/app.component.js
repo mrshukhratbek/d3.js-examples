@@ -1,6 +1,5 @@
 import React from "react";
 import "./app.css";
-import { data } from "./data";
 import { hoc } from "./utils";
 import { useAppProps } from "./app.props";
 import { CustomTree, TreeContainer, TreeNode } from "./components";
@@ -8,7 +7,15 @@ import { Modal } from "./components/modal/modal.component";
 
 export const App = hoc(
   useAppProps,
-  ({ addModal, setAddModal, editModal, setEditModal, handleAddNode }) => {
+  ({
+    addModal,
+    setAddModal,
+    editModal,
+    setEditModal,
+    handleAddNode,
+    inputRef,
+    data,
+  }) => {
     return (
       <TreeContainer>
         <CustomTree
@@ -19,6 +26,7 @@ export const App = hoc(
         <Modal open={addModal} setOpen={setAddModal} title="Add">
           <form className="modal-form" onSubmit={handleAddNode}>
             <input
+              ref={inputRef}
               className="modal-input"
               type="text"
               placeholder="Node name"

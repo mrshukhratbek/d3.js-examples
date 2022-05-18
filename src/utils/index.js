@@ -1,3 +1,2 @@
-import { hoc } from "./hoc";
-
-export { hoc };
+export * from "./hoc";
+export * from "./find-parent-node";

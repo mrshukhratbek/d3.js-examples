@@ -19,10 +19,12 @@ export const data = {
             {
               id: 3,
               name: "Programmer #1",
+              children: [],
             },
             {
               id: 4,
               name: "Programmer #2",
+              children: [],
             },
             {
               id: 5,
@@ -31,10 +33,12 @@ export const data = {
                 {
                   id: 6,
                   name: "Intern #1",
+                  children: [],
                 },
                 {
                   id: 7,
                   name: "Intern #2",
+                  children: [],
                 },
               ],
             },
@@ -50,10 +54,12 @@ export const data = {
             {
               id: 9,
               name: "Programmer #1",
+              children: [],
             },
             {
               id: 10,
               name: "Programmer #2",
+              children: [],
             },
           ],
         },
