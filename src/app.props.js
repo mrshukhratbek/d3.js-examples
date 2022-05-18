@@ -55,7 +55,6 @@ export const useAppProps = () => {
     };
 
     const result = findParentNode(innitialValue.data, addedNode);
-
     innitialValue.setData({ ...result });
 
     inputRef.current.value = null;
@@ -65,13 +64,19 @@ export const useAppProps = () => {
   useEffect(() => {
     if (innitialValue.parentNode && editModal) {
       editInputRef.current.focus();
-      editInputRef.current = innitialValue.parentNode.name;
+      editInputRef.current.value = innitialValue.parentNode.name;
     }
   }, [editModal]);
 
   const handleEditNode = (evt) => {
     evt.preventDefault();
+
+    innitialValue.parentNode.name = editInputRef.current.value;
+
+    const result = findParentNode(innitialValue.data, innitialValue.parentNode);
+    innitialValue.setData({ ...result });
   };
+  console.log(innitialValue.parentNode);
 
   return {
     inputRef,
