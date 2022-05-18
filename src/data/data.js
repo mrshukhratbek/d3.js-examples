@@ -1,48 +1,58 @@
 export const data = {
-  name: 'CEO',
+  name: "CEO",
   children: [
     {
-      name: 'Project Manager',
+      id: 1,
+      name: "Project Manager",
       attributes: {
-        department: 'Production',
+        department: "Production",
       },
       children: [
         {
-          name: 'Frontent Lead',
+          id: 2,
+          name: "Frontent Lead",
           attributes: {
-            department: 'Programming',
+            department: "Programming",
           },
           children: [
             {
-              name: 'Programmer #1',
+              id: 3,
+              name: "Programmer #1",
             },
             {
-              name: 'Programmer #2',
+              id: 4,
+              name: "Programmer #2",
             },
             {
-              name: 'Programmer #3',
+              id: 5,
+              name: "Programmer #3",
               children: [
                 {
-                  name: 'Intern #1',
+                  id: 6,
+                  name: "Intern #1",
                 },
                 {
-                  name: 'Intern #2',
+                  id: 7,
+                  name: "Intern #2",
                 },
               ],
             },
           ],
         },
         {
-          name: 'Backend Lead',
+          id: 8,
+          name: "Backend Lead",
           attributes: {
-            department: 'Programming',
+            department: "Programming",
           },
           children: [
             {
-              name: 'Programmer #1',
+              id: 9,
+              name: "Programmer #1",
             },
             {
-              name: 'Programmer #2',
+              id: 10,
+              name: "Programmer #2",
             },
           ],
         },

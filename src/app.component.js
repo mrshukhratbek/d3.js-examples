@@ -16,11 +16,11 @@ export const App = hoc(
           orientation="vertical"
           renderCustomNodeElement={(rd3tProps) => <TreeNode {...rd3tProps} />}
         />
-        <Modal open={addModal} setOpen={setAddModal}>
-          <>Qo'shish</>
+        <Modal open={addModal} setOpen={setAddModal} title="Add">
+          <>Add</>
         </Modal>
-        <Modal open={editModal} setOpen={setEditModal}>
-          <>O'zgartirish</>
+        <Modal open={editModal} setOpen={setEditModal} title="Edit">
+          <>Edit</>
         </Modal>
       </TreeContainer>
     );
