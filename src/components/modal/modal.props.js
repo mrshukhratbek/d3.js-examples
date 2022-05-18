@@ -1,23 +1,30 @@
-import { useEffect } from "react";
+// @react
+import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export const useModalProps = ({ open }) => {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
+  const elModal = React.useRef();
 
-  const handleClose = (evt) => {
+  const handleClose = () => {
     navigate(pathname);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      window.addEventListener("click", handleClose);
-    }, 200);
+  const handleCloseClick = (evt) => {
+    if (evt.target === elModal.current) {
+      navigate(pathname);
+    }
+  };
 
-    return () => window.removeEventListener("click", handleClose);
+  React.useEffect(() => {
+    elModal.current.addEventListener("click", handleCloseClick);
+
+    return () => elModal.current.removeEventListener("click", handleCloseClick);
   }, [search]);
 
   return {
     handleClose,
+    elModal,
   };
 };

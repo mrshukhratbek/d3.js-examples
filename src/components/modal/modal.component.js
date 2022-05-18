@@ -10,14 +10,16 @@ import { useModalProps } from "./modal.props";
 
 export const Modal = hoc(
   useModalProps,
-  ({ children, open, handleClose, title = "Modal" }) => {
+  ({ children, open, handleClose, title = "Modal", elModal }) => {
     return (
-      <div className={`modal ${open && "modal-open"}`}>
-        <div className="modal-header">
-          <h5 className="modal-title">{title}</h5>
-          <button onClick={handleClose}>&times;</button>
+      <div ref={elModal} className={`modal-wrapper ${open && "modal-open"}`}>
+        <div className="modal">
+          <div className="modal-header">
+            <h5 className="modal-title">{title}</h5>
+            <button onClick={handleClose}>&times;</button>
+          </div>
+          <div className="modal-content">{children}</div>
         </div>
-        <div>{children}</div>
       </div>
     );
   }

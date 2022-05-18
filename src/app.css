@@ -54,3 +54,20 @@ body {
 #root > div {
   height: 100%;
 }
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-input {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 8px 5px;
+  outline: none;
+}
+
+.modal-btn {
+  margin-left: auto;
+  width: 40px;
+}

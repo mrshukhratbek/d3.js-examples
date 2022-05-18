@@ -17,10 +17,19 @@ export const App = hoc(
           renderCustomNodeElement={(rd3tProps) => <TreeNode {...rd3tProps} />}
         />
         <Modal open={addModal} setOpen={setAddModal} title="Add">
-          <>Add</>
+          <form className="modal-form">
+            <input
+              className="modal-input"
+              type="text"
+              placeholder="Node name"
+              required
+            />
+
+            <button className="modal-btn">Add</button>
+          </form>
         </Modal>
         <Modal open={editModal} setOpen={setEditModal} title="Edit">
-          <>Edit</>
+          <form>Edit</form>
         </Modal>
       </TreeContainer>
     );
