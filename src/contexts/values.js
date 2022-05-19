@@ -4,6 +4,8 @@ import React, { useEffect } from 'react';
 import { customdata } from '../data';
 // @utils
 import { createArray } from '../utils';
+// @config
+import { configTree } from '../configTree';
 
 export const ValuesContext = React.createContext();
 
@@ -16,6 +18,7 @@ export const ValuesProvider = ({ children }) => {
     setData,
     parentNode: null,
     nodeArr: [...new Set([...createdArray])],
+    configTree,
   });
 
   useEffect(() => {

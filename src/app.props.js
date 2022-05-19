@@ -94,5 +94,6 @@ export const useAppProps = () => {
     handleAddNode,
     handleEditNode,
     data: innitialValue.data,
+    configTree: innitialValue.configTree,
   };
 };
