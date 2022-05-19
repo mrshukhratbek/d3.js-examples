@@ -17,7 +17,7 @@ export const config = [
     color: colors.child,
   },
   {
-    id: 3,
+    id: 4,
     type: 'none',
     color: colors.none,
   },

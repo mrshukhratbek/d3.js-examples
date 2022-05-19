@@ -5,7 +5,7 @@ export const Legion = () => {
     <div className="legion-wrapper">
       <ul>
         {config.map((item) => (
-          <li>
+          <li key={item.id}>
             <span
               style={{ backgroundColor: item.color }}
               className="color-palette"
