@@ -1,9 +1,14 @@
+// @react
+import React from 'react';
 // @hooks
-import { useToolbar, useConfigTree } from '../../hooks';
+import { useToolbar, useConfigTree, useValues } from '../../hooks';
 
 export const useToolbarProps = () => {
+  const [innitialValue] = useValues();
   const [configTree, setConfigTree] = useConfigTree();
   const [open, setOpen] = useToolbar();
+
+  const [search, setSearch] = React.useState([]);
 
   const handleOpen = () => {
     setOpen(!open);
@@ -35,7 +40,17 @@ export const useToolbarProps = () => {
   };
 
   const handleSearch = (evt) => {
-    console.log(evt.target.value);
+    const newRegExp = new RegExp(evt.target.value, 'gi');
+
+    if (!evt.target.value.length) {
+      return setSearch([]);
+    }
+
+    const filtredArr = innitialValue.nodeArr.filter((node) =>
+      node.name.match(newRegExp)
+    );
+
+    setSearch(filtredArr);
   };
 
   const handleSelected = () => {
@@ -44,6 +59,7 @@ export const useToolbarProps = () => {
 
   return {
     open,
+    search,
     configTree,
     handleOpen,
     handleChangeOrientation,

@@ -7,6 +7,7 @@ export const Toolbar = hoc(
   ({
     handleOpen,
     open,
+    search,
     handleChangeOrientation,
     configTree,
     handleZoomIn,
@@ -32,10 +33,15 @@ export const Toolbar = hoc(
                 required
               />
 
-              <ul className="datalist">
-                <li onClick={handleSelected}>Something</li>
-                <li onClick={handleSelected}>Something</li>
-              </ul>
+              {search.length > 0 && (
+                <ul className="datalist">
+                  {search.map((node) => (
+                    <li key={node.id} onClick={handleSelected}>
+                      {node.name}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             <label htmlFor="orientation">Orientation</label>
