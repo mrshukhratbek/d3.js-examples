@@ -5,6 +5,7 @@ import { useAddModalProps } from './add-modal.props';
 export const AddModal = hoc(
   useAddModalProps,
   ({ open, setOpen, inputRef, selectRef, handleSubmit, nodeArr }) => {
+    console.log(nodeArr);
     return (
       <Modal open={open} setOpen={setOpen}>
         <form
