@@ -16,10 +16,30 @@ export const useToolbarProps = () => {
     });
   };
 
+  const handleZoomIn = () => {
+    if (configTree.zoom > 0.2) {
+      setConfigTree({
+        ...configTree,
+        zoom: configTree.zoom - 0.1,
+      });
+    }
+  };
+
+  const handleZoomOut = () => {
+    if (configTree.zoom < 1.5) {
+      setConfigTree({
+        ...configTree,
+        zoom: configTree.zoom + 0.1,
+      });
+    }
+  };
+
   return {
     open,
+    configTree,
     handleOpen,
     handleChangeOrientation,
-    configTree,
+    handleZoomIn,
+    handleZoomOut,
   };
 };

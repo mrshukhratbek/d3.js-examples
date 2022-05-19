@@ -4,7 +4,14 @@ import { useToolbarProps } from './toolbar.props';
 
 export const Toolbar = hoc(
   useToolbarProps,
-  ({ handleOpen, open, handleChangeOrientation, configTree }) => {
+  ({
+    handleOpen,
+    open,
+    handleChangeOrientation,
+    configTree,
+    handleZoomIn,
+    handleZoomOut,
+  }) => {
     return (
       <div className={`toolbar ${open && 'toolbar-open'}`}>
         <button className="toolbar-btn" onClick={handleOpen}>
@@ -34,9 +41,21 @@ export const Toolbar = hoc(
 
             <p>Zoom</p>
             <div className="zoom">
-              <button type="button">-</button>
-              <button type="button">+</button>
-              <output>1</output>
+              <button
+                type="button"
+                onClick={handleZoomIn}
+                disabled={configTree.zoom.toFixed(1) - 0 === 0.1 ? true : false}
+              >
+                -
+              </button>
+              <button
+                type="button"
+                onClick={handleZoomOut}
+                disabled={configTree.zoom.toFixed(1) - 0 === 1.5 ? true : false}
+              >
+                +
+              </button>
+              <output>{configTree.zoom.toFixed(1)}</output>
             </div>
           </form>
         </div>
