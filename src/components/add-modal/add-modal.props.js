@@ -2,8 +2,10 @@
 import React from 'react';
 // @uuid
 import { v4 } from 'uuid';
-// hooks
+// @hooks
 import { useValues } from '../../hooks';
+// @utils
+import { addNodeWithParentId } from '../../utils';
 
 export const useAddModalProps = () => {
   const inputRef = React.useRef();
@@ -18,8 +20,7 @@ export const useAddModalProps = () => {
       name: inputRef.current.value,
     };
 
-    console.log(parentNode);
-    console.log(newNode);
+    addNodeWithParentId(innitialValue.data, parentNode, newNode);
   };
 
   return {
