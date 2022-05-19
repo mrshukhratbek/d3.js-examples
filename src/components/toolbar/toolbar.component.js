@@ -20,9 +20,7 @@ export const Toolbar = hoc(
               placeholder="Search"
               required
             />
-          </form>
 
-          <form>
             <label htmlFor="orientation">Orientation</label>
             <select
               className="modal-select"
@@ -33,6 +31,13 @@ export const Toolbar = hoc(
               <option value="horizontal">Horizontal</option>
               <option value="vertical">Vertical</option>
             </select>
+
+            <p>Zoom</p>
+            <div className="zoom">
+              <button type="button">-</button>
+              <button type="button">+</button>
+              <output>1</output>
+            </div>
           </form>
         </div>
       </div>

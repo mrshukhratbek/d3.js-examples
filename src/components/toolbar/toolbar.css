@@ -27,3 +27,29 @@
   margin: 0;
   margin-bottom: 40px;
 }
+
+.zoom {
+  display: flex;
+  align-items: center;
+}
+
+.zoom button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.zoom output {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 35px;
+  height: 30px;
+}
