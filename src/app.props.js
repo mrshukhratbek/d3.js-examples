@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 // @hook
-import { useValues } from './hooks';
+import { useValues, useConfigTree } from './hooks';
 // @utils
 import { addNode, editNode } from './utils';
 import { v4 } from 'uuid';
@@ -11,6 +11,7 @@ export const useAppProps = () => {
   const { pathname, search } = useLocation();
   const navigate = useNavigate();
   const [innitialValue] = useValues();
+  const [configTree] = useConfigTree();
   // @states
   const [addModal, setAddModal] = React.useState(false);
   const [editModal, setEditModal] = React.useState(false);
@@ -94,6 +95,6 @@ export const useAppProps = () => {
     handleAddNode,
     handleEditNode,
     data: innitialValue.data,
-    configTree: innitialValue.configTree,
+    configTree,
   };
 };
