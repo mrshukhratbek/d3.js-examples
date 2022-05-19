@@ -45,8 +45,90 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #222;
+  overflow: hidden;
+  background-color: #c5c5c5;
 }
 
 #root {
   height: 100%;
+}
+
+#root > div {
+  height: 100%;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-input {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 8px 5px;
+  outline: none;
+}
+
+.modal-btn {
+  margin-left: auto;
+  width: 40px;
+}
+
+.modal-select {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 8px 5px;
+  outline: none;
+}
+
+.graph-legion {
+  z-index: 5;
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  max-height: 160px;
+  width: 200px;
+  padding: 5px;
+  background: #ffffff8f;
+}
+
+.graph-legion ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.graph-legion ul li {
+  padding: 7px 2px;
+  border-radius: 2px;
+  text-align: center;
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+  border: 1px solid gray;
+  margin: 2px;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.graph-legion ul li span {
+  display: inline-block;
+  height: 12px;
+  width: 130px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.graph-legion ul li .color-palette {
+  height: 20px;
+  width: 50px;
+  display: inline-block;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+
+.type {
+  text-transform: capitalize;
 }
