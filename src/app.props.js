@@ -4,7 +4,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 // @hook
 import { useValues } from './hooks';
 // @utils
-import { findParentNode, addNode, editNode } from './utils';
+import { addNode, editNode } from './utils';
+import { v4 } from 'uuid';
 
 export const useAppProps = () => {
   const { pathname, search } = useLocation();
@@ -45,9 +46,8 @@ export const useAppProps = () => {
     }
 
     const newNode = {
-      id: Math.random(),
+      id: v4(),
       name: inputRef.current.value,
-      children: [],
     };
 
     const addedNode = {

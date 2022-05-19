@@ -9,7 +9,8 @@ export const ValuesContext = React.createContext();
 
 export const ValuesProvider = ({ children }) => {
   const [data, setData] = React.useState(customdata);
-  const createdArray = createArray(data);
+  const createdArray = [...createArray(data)];
+
   const [innitialValue, setInnitialValue] = React.useState({
     data,
     setData,
@@ -21,7 +22,7 @@ export const ValuesProvider = ({ children }) => {
     setInnitialValue({
       ...innitialValue,
       data,
-      nodeArr: [...new Set([...createdArray])],
+      nodeArr: [...new Set(createdArray)],
     });
   }, [data]);
 

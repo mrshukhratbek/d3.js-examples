@@ -34,7 +34,7 @@ export const App = hoc(
           <CustomTree
             data={data}
             orientation="vertical"
-            initialDepth={1}
+            // initialDepth={1}
             collapsible={true}
             renderCustomNodeElement={(rd3tProps) => <TreeNode {...rd3tProps} />}
           />

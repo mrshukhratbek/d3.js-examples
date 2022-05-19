@@ -1,7 +1,7 @@
 // @react
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 // hook
-import { useValues } from "../../hooks";
+import { useValues } from '../../hooks';
 
 export const useTreeNode = () => {
   const navigate = useNavigate();
@@ -17,13 +17,12 @@ export const useTreeNode = () => {
   };
 
   const handleAdd = (data) => {
-    console.log(data);
     setInnitialValue({
       ...innitialValue,
       parentNode: data,
     });
 
-    navigate("..?add-modal=true", { replace: true });
+    navigate('..?add-modal=true', { replace: true });
   };
 
   const handleEdit = (data) => {
@@ -32,7 +31,7 @@ export const useTreeNode = () => {
       parentNode: data,
     });
 
-    navigate("..?edit-modal=true", { replace: true });
+    navigate('..?edit-modal=true', { replace: true });
   };
 
   return { foreignObjectProps, handleAdd, handleEdit };

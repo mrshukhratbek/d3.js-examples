@@ -4,8 +4,7 @@ import { useAddModalProps } from './add-modal.props';
 
 export const AddModal = hoc(
   useAddModalProps,
-  ({ open, setOpen, inputRef, handleChange, handleSubmit, nodeArr }) => {
-    console.log(nodeArr);
+  ({ open, setOpen, inputRef, selectRef, handleSubmit, nodeArr }) => {
     return (
       <Modal open={open} setOpen={setOpen}>
         <form
@@ -13,10 +12,12 @@ export const AddModal = hoc(
           onSubmit={handleSubmit}
           defaultValue="select"
         >
-          <select className="modal-select" onChange={handleChange}>
+          <select className="modal-select" ref={selectRef}>
             <option value={'select'}>Select parent node</option>
             {nodeArr.map((node, i) => (
-              <option key={i}>{node.name}</option>
+              <option key={i} value={JSON.stringify(node)}>
+                {node.name}
+              </option>
             ))}
           </select>
 
