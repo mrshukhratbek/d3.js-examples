@@ -11,6 +11,8 @@ export const Toolbar = hoc(
     configTree,
     handleZoomIn,
     handleZoomOut,
+    handleSearch,
+    handleSelected,
   }) => {
     return (
       <div className={`toolbar ${open && 'toolbar-open'}`}>
@@ -21,12 +23,20 @@ export const Toolbar = hoc(
           <h3 className="toolbar-title">Toolbar</h3>
 
           <form>
-            <input
-              className="modal-input"
-              type="text"
-              placeholder="Search"
-              required
-            />
+            <div className="search-wrapper">
+              <input
+                className="modal-input"
+                type="text"
+                placeholder="Search"
+                onChange={handleSearch}
+                required
+              />
+
+              <ul className="datalist">
+                <li onClick={handleSelected}>Something</li>
+                <li onClick={handleSelected}>Something</li>
+              </ul>
+            </div>
 
             <label htmlFor="orientation">Orientation</label>
             <select

@@ -34,6 +34,14 @@ export const useToolbarProps = () => {
     }
   };
 
+  const handleSearch = (evt) => {
+    console.log(evt.target.value);
+  };
+
+  const handleSelected = () => {
+    console.log('selected');
+  };
+
   return {
     open,
     configTree,
@@ -41,5 +49,7 @@ export const useToolbarProps = () => {
     handleChangeOrientation,
     handleZoomIn,
     handleZoomOut,
+    handleSearch,
+    handleSelected,
   };
 };
