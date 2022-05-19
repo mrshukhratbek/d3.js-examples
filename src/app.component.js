@@ -9,6 +9,7 @@ import {
   Toolbar,
   AddBtn,
   AddModal,
+  Legion,
 } from './components';
 import { Modal } from './components/modal/modal.component';
 
@@ -64,6 +65,9 @@ export const App = hoc(
             </form>
           </Modal>
         </TreeContainer>
+        <div className="graph-legion">
+          <Legion />
+        </div>
         <Toolbar />
         <AddBtn setModal={setModal} />
         <AddModal open={modal} setOpen={setModal} title="Add" />
