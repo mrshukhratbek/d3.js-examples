@@ -3,7 +3,7 @@ import './tree-node.css';
 // @react
 import React from 'react';
 // @utils
-import { hoc } from '../../utils';
+import { hoc, colors } from '../../utils';
 // @hook
 import { useTreeNode } from './tree-node.props';
 
@@ -18,7 +18,9 @@ export const TreeNode = hoc(
               style={{
                 width: '200px',
                 border: '1px solid black',
-                backgroundColor: '#dedede',
+                backgroundColor: `${
+                  colors[nodeDatum.type] ? colors[nodeDatum.type] : '#dedede'
+                }`,
                 borderRadius: '10px',
                 overflow: 'hidden',
               }}

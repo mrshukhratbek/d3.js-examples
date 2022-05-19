@@ -1,7 +1,11 @@
+// @react
 import React from 'react';
+// hooks
+import { useValues } from '../../hooks';
 
 export const useAddModalProps = () => {
   const inputRef = React.useRef();
+  const [innitialValue] = useValues();
 
   const handleChange = (evt) => {
     console.log(evt);
@@ -17,5 +21,6 @@ export const useAddModalProps = () => {
     inputRef,
     handleChange,
     handleSubmit,
+    nodeArr: innitialValue.nodeArr,
   };
 };
