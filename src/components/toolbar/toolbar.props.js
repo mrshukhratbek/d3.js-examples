@@ -3,7 +3,7 @@ import React from 'react';
 // @hooks
 import { useToolbar, useConfigTree, useValues } from '../../hooks';
 // @utils
-import { addSerachStyle, collapseParentNode } from '../../utils';
+import { collapseParentNode } from '../../utils';
 
 export const useToolbarProps = () => {
   const [innitialValue] = useValues();
@@ -11,6 +11,7 @@ export const useToolbarProps = () => {
   const [open, setOpen] = useToolbar();
 
   const [search, setSearch] = React.useState([]);
+
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -54,7 +55,7 @@ export const useToolbarProps = () => {
     setSearch(filtredArr);
   };
 
-  const handleSelected = (node) => {
+  const handleSelected = async (node) => {
     setConfigTree({
       ...configTree,
       initialDepth: undefined,
@@ -68,7 +69,17 @@ export const useToolbarProps = () => {
 
     innitialValue.setData({ ...result });
 
-    addSerachStyle(node);
+    const allNodes = document.querySelectorAll('.tree-node');
+
+    allNodes.forEach((elem) => {
+      if (elem.querySelector('.node-name').textContent === node.name) {
+        elem.classList.add('search');
+        elem.querySelector('.collapse-btn') &&
+          elem.querySelector('.collapse-btn').click();
+      } else {
+        elem.classList.remove('search');
+      }
+    });
   };
 
   return {

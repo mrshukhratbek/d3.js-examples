@@ -5,3 +5,23 @@
 .button-wrapper button {
   flex-grow: 1;
 }
+
+.title {
+  background-color: #048A81;
+}
+
+.subtitle {
+  background-color: #06D6A0;
+}
+
+.child {
+  background-color: #54C6EB;
+}
+
+.none {
+  background-color: #dedede;
+}
+
+.search {
+  background-color: #ff0;
+}

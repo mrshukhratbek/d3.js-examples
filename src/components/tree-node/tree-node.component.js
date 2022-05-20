@@ -23,13 +23,10 @@ export const TreeNode = hoc(
         <g>
           <foreignObject {...foreignObjectProps}>
             <div
-              className="tree-node"
+              className={`tree-node ${nodeDatum.type}`}
               style={{
                 width: '200px',
                 border: '1px solid black',
-                backgroundColor: `${
-                  colors[nodeDatum.type] ? colors[nodeDatum.type] : '#dedede'
-                }`,
                 borderRadius: '10px',
                 overflow: 'hidden',
               }}
