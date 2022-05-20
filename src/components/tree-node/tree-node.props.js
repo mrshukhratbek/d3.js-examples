@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // @hooks
 import { useValues } from '../../hooks';
 // @utils
-import { collapse } from '../../utils/collapse';
+import { collapse } from '../../utils';
 
 export const useTreeNodeProps = () => {
   const navigate = useNavigate();

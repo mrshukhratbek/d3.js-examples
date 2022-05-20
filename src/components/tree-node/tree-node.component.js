@@ -40,7 +40,7 @@ export const TreeNode = hoc(
               <div className="button-wrapper">
                 {nodeDatum.children && nodeDatum.children.length > 0 && (
                   <button
-                    onClick={(parms) => {
+                    onClick={() => {
                       toggleNode();
                       customToggle(nodeDatum);
                     }}

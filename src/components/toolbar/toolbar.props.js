@@ -2,6 +2,8 @@
 import React from 'react';
 // @hooks
 import { useToolbar, useConfigTree, useValues } from '../../hooks';
+// @utils
+import { addSerachStyle, collapseParentNode } from '../../utils';
 
 export const useToolbarProps = () => {
   const [innitialValue] = useValues();
@@ -53,17 +55,20 @@ export const useToolbarProps = () => {
   };
 
   const handleSelected = (node) => {
-    const allNodes = document.querySelectorAll('.tree-node');
     setConfigTree({
       ...configTree,
       initialDepth: undefined,
     });
-    allNodes.forEach((elem) => {
-      if (elem.querySelector('.node-name').textContent === node.name) {
-        elem.style.backgroundColor = '#ff0';
-        // elem.querySelector('.collapse-btn').click();
-      }
-    });
+
+    const result = collapseParentNode(
+      innitialValue.data,
+      node,
+      innitialValue.nodeArr
+    );
+    console.log(result);
+    innitialValue.setData({ ...result });
+
+    addSerachStyle(node);
   };
 
   return {
