@@ -37,5 +37,6 @@ export const collapseParentNode = (obj, node, array) => {
 
   const result = open(obj, node, array, allObj);
   result.isOpen = true;
+
   return result;
 };
