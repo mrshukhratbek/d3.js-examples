@@ -23,6 +23,13 @@ export const useToolbarProps = () => {
     });
   };
 
+  const handleChangeLine = (evt) => {
+    setConfigTree({
+      ...configTree,
+      pathFunc: evt.target.value,
+    });
+  };
+
   const handleZoomIn = () => {
     if (configTree.zoom > 0.2) {
       setConfigTree({
@@ -92,5 +99,6 @@ export const useToolbarProps = () => {
     handleZoomOut,
     handleSearch,
     handleSelected,
+    handleChangeLine,
   };
 };

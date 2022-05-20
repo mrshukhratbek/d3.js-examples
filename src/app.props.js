@@ -72,6 +72,7 @@ export const useAppProps = () => {
       editInputRef.current.focus();
       editInputRef.current.value = innitialValue.parentNode.name;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [editModal]);
 
   const handleEditNode = (evt) => {

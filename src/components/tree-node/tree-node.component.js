@@ -3,7 +3,7 @@ import './tree-node.css';
 // @react
 import React from 'react';
 // @utils
-import { hoc, colors } from '../../utils';
+import { hoc } from '../../utils';
 // @hook
 import { useTreeNodeProps } from './tree-node.props';
 

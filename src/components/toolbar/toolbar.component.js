@@ -14,6 +14,7 @@ export const Toolbar = hoc(
     handleZoomOut,
     handleSearch,
     handleSelected,
+    handleChangeLine,
   }) => {
     return (
       <div className={`toolbar ${open && 'toolbar-open'}`}>
@@ -25,7 +26,9 @@ export const Toolbar = hoc(
 
           <form>
             <div className="search-wrapper">
+              <label htmlFor="search">Search</label>
               <input
+                id="search"
                 className="modal-input"
                 type="text"
                 placeholder="Search"
@@ -53,6 +56,19 @@ export const Toolbar = hoc(
             >
               <option value="horizontal">Horizontal</option>
               <option value="vertical">Vertical</option>
+            </select>
+
+            <label htmlFor="line">Line</label>
+            <select
+              className="modal-select"
+              id="line"
+              defaultValue={configTree.orientation}
+              onChange={handleChangeLine}
+            >
+              <option value="diagonal">Diagonal</option>
+              <option value="elbow">Elbow</option>
+              <option value="straight">Straight</option>
+              <option value="step">Step</option>
             </select>
 
             <p>Zoom</p>

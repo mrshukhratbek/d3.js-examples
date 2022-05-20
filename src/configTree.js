@@ -6,4 +6,5 @@ export const configTree = {
   zoom: 1,
   centeringTransitionDuration: 800,
   dimensions: undefined,
+  pathFunc: 'diagonal',
 };
