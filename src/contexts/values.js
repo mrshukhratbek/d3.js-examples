@@ -24,6 +24,7 @@ export const ValuesProvider = ({ children }) => {
       data,
       nodeArr: [...new Set(createdArray)],
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   return (
