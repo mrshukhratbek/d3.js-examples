@@ -8,6 +8,10 @@ import { useTreeContainerProps } from './tree-container.props';
 export const TreeContainer = hoc(
   useTreeContainerProps,
   ({ children, containerRef }) => {
-    return <div ref={containerRef}>{children}</div>;
+    return (
+      <div ref={containerRef} className="tree-container">
+        {children}
+      </div>
+    );
   }
 );

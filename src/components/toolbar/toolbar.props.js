@@ -9,7 +9,6 @@ export const useToolbarProps = () => {
   const [open, setOpen] = useToolbar();
 
   const [search, setSearch] = React.useState([]);
-  console.log(configTree);
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -55,20 +54,25 @@ export const useToolbarProps = () => {
 
   const handleSelected = (node) => {
     const allNodes = document.querySelectorAll('.tree-node');
-
-    allNodes.forEach((elem) => {
-      if (elem.querySelector('.node-name').textContent === node.name) {
-        setConfigTree({
-          ...configTree,
-          dimensions: { width: 198, height: 87 },
-        });
-        // elem.click();
-        console.log(configTree);
-        console.log(elem.clientWidth, elem);
-        console.log(elem.clientHeight);
-      }
+    const treeContainer = document.querySelector('.tree-container');
+    const { width, height } = treeContainer.getBoundingClientRect();
+    // allNodes.forEach((elem) => {
+    //   if (elem.querySelector('.node-name').textContent === node.name) {
+    //     setConfigTree({
+    //       ...configTree,
+    //       dimensions: { width: 198, height: 87 },
+    //     });
+    //     // elem.click();
+    //     console.log(configTree);
+    //     console.log(elem.clientWidth, elem);
+    //     console.log(elem.clientHeight);
+    //   }
+    // });
+    setConfigTree({
+      ...configTree,
+      dimensions: { width, height },
     });
-    console.log(node);
+    console.log(width, height);
   };
 
   return {
