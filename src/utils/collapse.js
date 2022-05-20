@@ -13,7 +13,7 @@ export const collapse = (obj, node) => {
   return myData;
 };
 
-export const collapseParentNode = (obj, node, array) => {
+function open(obj, node, array, allObj) {
   const myData = obj;
   const parentNodeId = node.parentId;
 
@@ -22,14 +22,20 @@ export const collapseParentNode = (obj, node, array) => {
 
     const foundObj = array.find((item) => item.id === obj.id);
     if (foundObj.parentId) {
-      console.log(foundObj);
-      collapseParentNode(myData, foundObj, array);
+      open(allObj, foundObj, array, allObj);
     }
   } else {
     obj.children?.forEach((item) => {
-      collapseParentNode(item, node, array);
+      open(item, node, array, allObj);
     });
   }
-
   return myData;
+}
+
+export const collapseParentNode = (obj, node, array) => {
+  const allObj = { ...obj };
+
+  const result = open(obj, node, array, allObj);
+  result.isOpen = true;
+  return result;
 };
