@@ -49,6 +49,7 @@ export const useAppProps = () => {
     const newNode = {
       id: v4(),
       name: inputRef.current.value,
+      isOpen: false,
     };
 
     const addedNode = {

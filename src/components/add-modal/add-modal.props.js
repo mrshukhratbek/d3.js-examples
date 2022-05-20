@@ -18,6 +18,7 @@ export const useAddModalProps = ({ setOpen }) => {
     const newNode = {
       id: v4(),
       name: inputRef.current.value,
+      isOpen: false,
     };
 
     const result = addNodeWithParentId(innitialValue.data, parentNode, newNode);

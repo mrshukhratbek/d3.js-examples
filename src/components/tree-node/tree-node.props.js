@@ -1,9 +1,11 @@
 // @react
 import { useNavigate } from 'react-router-dom';
-// hook
+// @hooks
 import { useValues } from '../../hooks';
+// @utils
+import { collapse } from '../../utils/collapse';
 
-export const useTreeNode = () => {
+export const useTreeNodeProps = () => {
   const navigate = useNavigate();
   const [innitialValue, setInnitialValue] = useValues();
 
@@ -34,5 +36,11 @@ export const useTreeNode = () => {
     navigate('..?edit-modal=true', { replace: true });
   };
 
-  return { foreignObjectProps, handleAdd, handleEdit };
+  const customToggle = (params) => {
+    const result = collapse(innitialValue.data, params);
+
+    innitialValue.setData({ ...result });
+  };
+
+  return { foreignObjectProps, handleAdd, handleEdit, customToggle };
 };
