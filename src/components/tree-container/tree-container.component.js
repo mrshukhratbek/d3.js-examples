@@ -1,9 +1,9 @@
 // @react
-import React from "react";
+import React from 'react';
 // @utils
-import { hoc } from "../../utils";
+import { hoc } from '../../utils';
 // @hook
-import { useTreeContainerProps } from "./tree-container.props";
+import { useTreeContainerProps } from './tree-container.props';
 
 export const TreeContainer = hoc(
   useTreeContainerProps,

@@ -36,7 +36,7 @@ export const Toolbar = hoc(
               {search.length > 0 && (
                 <ul className="datalist">
                   {search.map((node) => (
-                    <li key={node.id} onClick={handleSelected}>
+                    <li key={node.id} onClick={handleSelected.bind(null, node)}>
                       {node.name}
                     </li>
                   ))}
