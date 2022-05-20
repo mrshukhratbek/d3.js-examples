@@ -27,15 +27,14 @@ export const App = hoc(
     inputRef,
     editInputRef,
     data,
+    configTree,
   }) => {
     return (
       <>
         <TreeContainer>
           <CustomTree
             data={data}
-            orientation="vertical"
-            initialDepth={1}
-            collapsible={true}
+            {...configTree}
             renderCustomNodeElement={(rd3tProps) => <TreeNode {...rd3tProps} />}
           />
           <Modal open={addModal} setOpen={setAddModal} title="Add">

@@ -1,14 +1,14 @@
 // @react
 import React, { useEffect } from 'react';
 // @data
-import { customdata } from '../data';
+import { fakeData } from '../data';
 // @utils
 import { createArray } from '../utils';
 
 export const ValuesContext = React.createContext();
 
 export const ValuesProvider = ({ children }) => {
-  const [data, setData] = React.useState(customdata);
+  const [data, setData] = React.useState(fakeData);
   const createdArray = [...createArray(data)];
 
   const [innitialValue, setInnitialValue] = React.useState({
@@ -24,6 +24,7 @@ export const ValuesProvider = ({ children }) => {
       data,
       nodeArr: [...new Set(createdArray)],
     });
+    console.log(data);
   }, [data]);
 
   return (

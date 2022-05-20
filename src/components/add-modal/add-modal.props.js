@@ -7,7 +7,7 @@ import { useValues } from '../../hooks';
 // @utils
 import { addNodeWithParentId } from '../../utils';
 
-export const useAddModalProps = () => {
+export const useAddModalProps = ({ setOpen }) => {
   const inputRef = React.useRef();
   const selectRef = React.useRef();
   const [innitialValue] = useValues();
@@ -20,7 +20,12 @@ export const useAddModalProps = () => {
       name: inputRef.current.value,
     };
 
-    addNodeWithParentId(innitialValue.data, parentNode, newNode);
+    const result = addNodeWithParentId(innitialValue.data, parentNode, newNode);
+
+    innitialValue.setData({ ...result });
+
+    inputRef.current.value = null;
+    setOpen(false);
   };
 
   return {
