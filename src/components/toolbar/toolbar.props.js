@@ -65,7 +65,7 @@ export const useToolbarProps = () => {
       node,
       innitialValue.nodeArr
     );
-    console.log(result);
+
     innitialValue.setData({ ...result });
 
     addSerachStyle(node);

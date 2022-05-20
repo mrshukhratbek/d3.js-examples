@@ -3,7 +3,6 @@ export const collapse = (obj, node) => {
 
   if (obj.id === node.id) {
     obj.isOpen = !obj.isOpen;
-    console.log(obj);
   } else {
     obj.children?.forEach((item) => {
       collapse(item, node);
