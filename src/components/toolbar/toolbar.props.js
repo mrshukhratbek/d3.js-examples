@@ -54,25 +54,16 @@ export const useToolbarProps = () => {
 
   const handleSelected = (node) => {
     const allNodes = document.querySelectorAll('.tree-node');
-    const treeContainer = document.querySelector('.tree-container');
-    const { width, height } = treeContainer.getBoundingClientRect();
-    // allNodes.forEach((elem) => {
-    //   if (elem.querySelector('.node-name').textContent === node.name) {
-    //     setConfigTree({
-    //       ...configTree,
-    //       dimensions: { width: 198, height: 87 },
-    //     });
-    //     // elem.click();
-    //     console.log(configTree);
-    //     console.log(elem.clientWidth, elem);
-    //     console.log(elem.clientHeight);
-    //   }
-    // });
     setConfigTree({
       ...configTree,
-      dimensions: { width, height },
+      initialDepth: undefined,
     });
-    console.log(width, height);
+    allNodes.forEach((elem) => {
+      if (elem.querySelector('.node-name').textContent === node.name) {
+        elem.style.backgroundColor = '#ff0';
+        // elem.querySelector('.collapse-btn').click();
+      }
+    });
   };
 
   return {

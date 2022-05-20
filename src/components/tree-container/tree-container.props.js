@@ -7,17 +7,22 @@ export const useTreeContainerProps = () => {
   const [setTranslate] = useCenteredTree(true);
   const [configTree, setConfigTree] = useConfigTree();
 
-  const containerRef = React.useCallback((containerElem) => {
-    if (containerElem !== null) {
-      const { width, height } = containerElem.getBoundingClientRect();
-      setConfigTree({
-        ...configTree,
-        dimensions: { width, height },
-      });
+  const containerRef = React.useCallback(
+    (containerElem) => {
+      if (containerElem !== null) {
+        const { width, height } = containerElem.getBoundingClientRect();
 
-      setTranslate({ x: width / 2, y: 100 });
-    }
-  }, []);
+        setConfigTree({
+          ...configTree,
+          dimensions: { width, height },
+        });
+
+        setTranslate({ x: width / 2, y: 200 });
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [setConfigTree, setTranslate]
+  );
 
   return { containerRef };
 };

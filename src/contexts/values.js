@@ -24,6 +24,7 @@ export const ValuesProvider = ({ children }) => {
       data,
       nodeArr: [...new Set(createdArray)],
     });
+    console.log(data);
   }, [data]);
 
   return (

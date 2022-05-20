@@ -2,11 +2,13 @@ export const customdata = {
   id: 'b1745b7f-a00d-402c-ba49-1d5d691946ba',
   name: '9IbzB',
   type: 'title',
+  isOpen: false,
   children: [
     {
       id: '6f4e0637-818b-490c-bdf3-b3008376bb82',
       name: 'wDJwT',
       type: 'subtitle',
+      isOpen: false,
       children: [
         {
           id: 'dcab8f95-4e92-4ee4-b0d2-db1f5401c5e4',

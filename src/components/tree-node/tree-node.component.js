@@ -9,7 +9,15 @@ import { useTreeNode } from './tree-node.props';
 
 export const TreeNode = hoc(
   useTreeNode,
-  ({ nodeDatum, toggleNode, foreignObjectProps, handleAdd, handleEdit }) => {
+  ({
+    nodeDatum,
+    toggleNode,
+    foreignObjectProps,
+    handleAdd,
+    handleEdit,
+    isOpen,
+  }) => {
+    // nodeDatum.__rd3t.collapsed = nodeDatum.isOpen ? false : true;
     return (
       <>
         <g>
@@ -31,7 +39,7 @@ export const TreeNode = hoc(
               </h3>
               <div className="button-wrapper">
                 {nodeDatum.children && nodeDatum.children.length > 0 && (
-                  <button onClick={toggleNode}>
+                  <button onClick={toggleNode} className="collapse-btn">
                     {nodeDatum.__rd3t.collapsed ? 'Open' : 'Close'}
                   </button>
                 )}
