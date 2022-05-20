@@ -62,7 +62,7 @@ export const Toolbar = hoc(
             <select
               className="modal-select"
               id="line"
-              defaultValue={configTree.orientation}
+              defaultValue={configTree.pathFunc}
               onChange={handleChangeLine}
             >
               <option value="diagonal">Diagonal</option>
